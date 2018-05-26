@@ -39,5 +39,3 @@ private _position = _origin getPos [_radius * sqrt (1 - abs random [- 1, 0, 1]),
 
 // random area, ring
 private _position = _origin getPos [sqrt (_innerRadius^2 + random (_radius^2 - _innerRadius^2)), random 360];
-
-this attachTo [Kofferbombe1];
