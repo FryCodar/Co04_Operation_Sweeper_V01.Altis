@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=712;
+		nextID=719;
 	};
 	class Camera
 	{
-		pos[]={19411.293,30.182032,29811.404};
-		dir[]={-0.56425297,-0.44437903,0.69590819};
-		up[]={-0.27987286,0.89583403,0.34517387};
-		aside[]={0.77680779,1.4796387e-007,0.62984854};
+		pos[]={19447.463,43.940186,29795.479};
+		dir[]={-0.96268493,-0.26433313,0.05927011};
+		up[]={-0.26385236,0.96442282,0.01624394};
+		aside[]={0.061454896,2.3156827e-007,0.99818254};
 	};
 };
 binarizationWanted=0;
@@ -1958,7 +1958,7 @@ class Mission
 			};
 			id=82;
 			type="Land_SatelliteAntenna_01_F";
-			atlOffset=0.78899384;
+			atlOffset=0.83559418;
 		};
 		class Item34
 		{
@@ -5390,7 +5390,6 @@ class Mission
 			};
 			id=323;
 			type="Land_ShelvesWooden_F";
-			atlOffset=0.0022554398;
 		};
 		class Item116
 		{
@@ -9466,7 +9465,6 @@ class Mission
 			};
 			id=645;
 			type="Land_Laptop_F";
-			atlOffset=3.8146973e-005;
 		};
 		class Item236
 		{
@@ -9486,7 +9484,6 @@ class Mission
 			};
 			id=646;
 			type="Land_PlasticCase_01_small_gray_F";
-			atlOffset=0.00029754639;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17054,7 +17051,7 @@ class Mission
 			};
 			id=1329;
 			type="Land_ArmChair_01_F";
-			atlOffset=0.080953598;
+			atlOffset=0.08085537;
 		};
 		class Item513
 		{
