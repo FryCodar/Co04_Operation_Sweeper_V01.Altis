@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=719;
+		nextID=726;
 	};
 	class Camera
 	{
-		pos[]={19447.463,43.940186,29795.479};
-		dir[]={-0.96268493,-0.26433313,0.05927011};
-		up[]={-0.26385236,0.96442282,0.01624394};
-		aside[]={0.061454896,2.3156827e-007,0.99818254};
+		pos[]={19407.859,25.717924,29823.99};
+		dir[]={0.35994834,-0.34696758,0.86614257};
+		up[]={0.13315536,0.93786889,0.32041329};
+		aside[]={0.92350364,2.0406151e-007,-0.3837859};
 	};
 };
 binarizationWanted=0;
@@ -1373,13 +1373,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={19408.592,23.623392,29828.572};
+						position[]={19408.592,23.623432,29828.572};
 						angles[]={0,4.4999652,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						init="call{this switchMove ""HubSittingChairC_move1"";}";
 						name="St03";
 						class Inventory
 						{
@@ -1392,7 +1393,7 @@ class Mission
 					};
 					id=44;
 					type="B_Survivor_F";
-					atlOffset=0.00050354004;
+					atlOffset=0.00054359436;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1441,7 +1442,7 @@ class Mission
 			{
 			};
 			id=45;
-			atlOffset=0.00050354004;
+			atlOffset=0.00054359436;
 		};
 		class Item12
 		{
@@ -1455,7 +1456,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={19407.432,23.623392,29827.557};
+						position[]={19407.432,23.623432,29827.557};
 						angles[]={0,4.4516544,0};
 					};
 					side="West";
@@ -1463,6 +1464,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.56864518;
+						init="call{this switchMove ""HubSittingChairUA_move1"";}";
 						name="St01";
 						class Inventory
 						{
@@ -1475,7 +1477,7 @@ class Mission
 					};
 					id=46;
 					type="B_Survivor_F";
-					atlOffset=0.00050354004;
+					atlOffset=0.00054359436;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1524,7 +1526,7 @@ class Mission
 			{
 			};
 			id=47;
-			atlOffset=0.00050354004;
+			atlOffset=0.00054359436;
 		};
 		class Item13
 		{
@@ -1545,6 +1547,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="call{this switchMove ""HubSittingChairUB_move1"";}";
 						name="St02";
 						class Inventory
 						{
