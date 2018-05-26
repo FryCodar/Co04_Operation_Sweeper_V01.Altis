@@ -1,0 +1,43 @@
+
+
+
+
+          - Suche Zielort
+          - Kreire Marker und speicher Ihn ["MAINMARKER",PositionZiel,[Markername,SCRIPTWHENALLTARGETSDOWN]] spawn MSOT_system_fnc_addMissionInfos;                          X
+          - Erzeuge Ziel (mit AddAction zbsp) und speichere Ihn in ["MAINTARGETS",PositionZiel,[ZIELOBJECT,Markername,SCRIPT]] spawn MSOT_system_fnc_addMissionInfos;       X
+                                                                   ["MAINACTIONS",[ZIELOBJECT,STATUS,SCRIPTNACHAUSLÖSEN,BOOLDELETE]] spawn MSOT_system_fnc_addMissionInfos; X
+                                                                   ["ACTIONSTORAGE",[ZIELOBJECT,ACTIONTYPE,COLOR,TXT]] spawn MSOT_system_fnc_addMissionInfos;
+
+          - Erzeuge Trigger und speichere Sie in ["MAINTRIGGER",PositionZiel,[TRIGGERNAME,DOSCRIPT,NUMBERIDX,BOOLDELETEALLTRIGGERATPOS]] spawn MSOT_system_fnc_addMissionInfos;
+
+          - kreire RespawnPosition und speichere Sie in ["RESPAWNPOSES",PositionZiel,PositionRespawn] spawn MSOT_system_fnc_addMissionInfos;                                X
+
+          !!!! (WICHTIG INDEX 3 ist für AUSLÖSEN von SCRIPTEN BEIM MAINTARGET ABGLEICH RESERVIERT)!!!
+
+          1 - Aufbau der Mission mit Zielen
+          2 - Was soll passieren, nach dem die hälfte der Feinde getötet wurden/oder andere Eigenschaften durch Trigger ausgelöst(TriggerName veranlassen-["MAINTRIGGER",TRIGGERNAME,INDEX])
+          3 - Informationen, wenn Ziele bearbeitet wurden (STRING ist STATE -"SUCCESS"/"FAILED")
+          4 - Was soll nach Beendigung aller Maintargets passieren (STRING ist STATE -"SUCCESS"/"FAILED")
+          5 - Nachbereitung der Mission (TriggerName-löschen veranlassen - ["MAINTRIGGER",TRIGGERNAME,INDEX])
+
+
+
+          // random radius
+private _position = _origin getPos [random _radius, random 360];
+
+// random area
+private _position = _origin getPos [_radius * sqrt random 1, random 360];
+
+// normal distribution
+private _position = _origin getPos [_radius * random [- 1, 0, 1], random 180];
+
+// inverted normal distribution, random radius
+private _position = _origin getPos [_radius * (1 - abs random [- 1, 0, 1]), random 360];
+
+// inverted normal distribution, random area
+private _position = _origin getPos [_radius * sqrt (1 - abs random [- 1, 0, 1]), random 360];
+
+// random area, ring
+private _position = _origin getPos [sqrt (_innerRadius^2 + random (_radius^2 - _innerRadius^2)), random 360];
+
+this attachTo [Kofferbombe1];

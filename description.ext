@@ -1,0 +1,83 @@
+﻿onLoadName = "Operation Sweeper";
+author = "MSOT-Architheutis75";
+OnLoadMission = "a MSOT Produktion";
+// loadScreen =  "pic\Titel.paa";
+
+
+
+class Header
+{
+ gameType = COOP;
+ minPlayers = 1;
+ maxPlayers = 4;
+ playerCountMultipleOf = 1;
+};
+
+
+respawn = 3;
+respawndelay = 30;
+disabledAI = 1;
+
+
+#include "config_all.hpp"
+#include "downloadData.hpp"
+
+class CfgSounds
+
+{
+    Sound[] = {};
+    class Sound01
+    {
+        name = "Sound01";
+        sound[] = {"sounds\Sound01.ogg", +5, 1};
+        titles[] = {};
+    };
+
+    class Sound02
+    {
+        name = "Sound02";
+        sound[] = {"sounds\Sound02.ogg", +5, 1};
+        titles[] = {};
+    };
+
+    class Alarm
+    {
+        name = "Alarm";
+        sound[] = {"sounds\Alarm.ogg", +5, 1};
+        titles[] = {};
+    };
+
+    class Makrynisi
+    {
+        name = "Makrynisi";
+        sound[] = {"sounds\Makrynisi.ogg", +5, 1};
+        titles[] = {};
+    };
+
+    class Sprengsatz
+    {
+        name = "Sprengsatz";
+        sound[] = {"sounds\Sprengsatz.ogg", +5, 1};
+        titles[] = {};
+    };
+};
+
+
+class CfgMusic
+
+{
+   Music[] = {};
+   class Musik01
+   {
+   name = "Musik01";
+   sound[] = {"musik\Musik01.ogg",+5, 1};
+   titles[] = {};
+   };
+
+   class Ende
+   {
+   name = "Ende";
+   sound[] = {"musik\Ende.ogg",+5, 1};
+   titles[] = {};
+   };
+};
