@@ -12,12 +12,17 @@ onMapSingleClick {cutText ["<t color='#ff0000' size='2'>Click again to travel</t
 
 params ["_time"];
 MSOT_STOP_TRAVEL_COUNTER = true;
-while{_time > 0 && MSOT_STOP_TRAVEL_COUNTER}do
+while{_time > 0 && {MSOT_STOP_TRAVEL_COUNTER} && {visibleMap}}do
 {
   hintSilent composeText[parseText("<t font = 'RobotoCondensed' size='1.2' align='center'>" + "Time to stop the trip:" + "</t>"),lineBreak, parseText("<t size='4' color='#f0ff0000' align='center'>" + format ["%1",_time] + "</t>")];
   _time = _time - 1;
   sleep 1;
 };
 hint "";
-If(_time < 1 && MSOT_STOP_TRAVEL_COUNTER)then{cutText ["<t color='#ff0000' size='2'>Trip canceled</t>","PLAIN",-1,true,true];onMapSingleClick "";openMap false;};
+switch(true)do
+{
+  case (_time < 1 && MSOT_STOP_TRAVEL_COUNTER):{cutText ["<t color='#ff0000' size='2'>Trip canceled</t>","PLAIN",-1,true,true];onMapSingleClick "";openMap false;};
+  case (_time > 0 && {MSOT_STOP_TRAVEL_COUNTER} && {!visibleMap}):{cutText ["<t color='#ff0000' size='2'>Trip canceled</t>","PLAIN",-1,true,true];onMapSingleClick "";};
+};
+
 };
