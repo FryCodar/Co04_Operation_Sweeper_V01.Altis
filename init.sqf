@@ -14,6 +14,7 @@ enableSentences false;
 //***************************************************************************************************************************************************
 If(isServer)then
 {
+  [[H2,H3,H4,H5,H6],230] call MFUNC(usage,addRespawnVecs);
    execVM "Engima\enigma_init.sqf";
 };
 If(hasInterface)then
