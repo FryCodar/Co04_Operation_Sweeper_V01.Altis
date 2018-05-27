@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=740;
+		nextID=761;
 	};
 	class Camera
 	{
-		pos[]={19470.691,74.772667,29796.596};
+		pos[]={19644.684,310.63983,29819.887};
 		dir[]={-0.90629745,-0.42163542,0.032797597};
 		up[]={-0.42136607,0.90674591,0.015248161};
 		aside[]={0.036169518,5.4258817e-007,0.99945134};
@@ -1962,7 +1962,7 @@ class Mission
 			};
 			id=82;
 			type="Land_SatelliteAntenna_01_F";
-			atlOffset=0.78899384;
+			atlOffset=0.83559418;
 		};
 		class Item34
 		{
@@ -5070,7 +5070,6 @@ class Mission
 			};
 			id=323;
 			type="Land_ShelvesWooden_F";
-			atlOffset=0.0022554398;
 		};
 		class Item113
 		{
@@ -9146,7 +9145,6 @@ class Mission
 			};
 			id=645;
 			type="Land_Laptop_F";
-			atlOffset=3.8146973e-005;
 		};
 		class Item233
 		{
@@ -9166,7 +9164,6 @@ class Mission
 			};
 			id=646;
 			type="Land_PlasticCase_01_small_gray_F";
-			atlOffset=0.00029754639;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9234,13 +9231,13 @@ class Mission
 		class Item235
 		{
 			dataType="Trigger";
-			position[]={15201.268,0,27879.221};
+			position[]={15402.137,0,27088.602};
 			angle=1.2772145;
 			class Attributes
 			{
-				condition="call{this && hasInterface}";
-				onActivation="call{playMusic ""Musik01""; any=[""OPERATION SWEEPER"",""by: ARCHITHEUTIS"",""MSOT""] spawn BIS_fnc_infotext; deleteVehicle thisTrigger;}";
-				sizeA=3000;
+				condition="call{this && {local player}}";
+				onActivation="call{playMusic ""Musik01"";deleteVehicle thisTrigger;}";
+				sizeA=4000;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
 			};
@@ -16734,7 +16731,7 @@ class Mission
 			};
 			id=1329;
 			type="Land_ArmChair_01_F";
-			atlOffset=0.080953598;
+			atlOffset=0.08085537;
 		};
 		class Item510
 		{
