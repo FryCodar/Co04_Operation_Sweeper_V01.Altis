@@ -22,7 +22,6 @@ Author: Fry
 
 private ["_output","_holder","_add_arr","_search_it","_found_arr","_found_inside"];
 params ["_index","_value","_add_at_choice"];
-
 _output = false;
 If(missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false])then
 {waitUntil{!(missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false])};};
@@ -129,15 +128,19 @@ switch(toUpper _index)do
                           If(count _holder > 0)then
                           {
                             _search_it = [2,_holder,_value] call MFUNC(system,getInfoArray);
-                            If(count _search_it == 1)then
+                            If(count _search_it == 0)then
                             {
                               _add_arr = [_value,_add_at_choice];
                               ARR_ADDVAR(_holder,_add_arr); missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];_output = true;
-                              REMOTE_TRIEXESM([0,_add_arr],system,doClientRespawn,([0,-2] select isDedicated));
+                              _found_arr = [0,_add_arr];
+                              REMOTE_TRIEXESM(_found_arr,system,doClientRespawn,0);
                             }else{LOG_ERR("RESPAWNPOSES : SAME VALUE IN INFO STORAGE DETECTED");};
                           }else{
-                                REMOTE_TRIEXESM([0,[_value,_add_at_choice]],system,doClientRespawn,([0,-2] select isDedicated));
-                                _holder = [[_value,_add_at_choice]]; missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];
+                                _add_arr = [_value,_add_at_choice];
+                                _holder = [_add_arr]; missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];
+                                _found_arr = [0,_add_arr];
+                                hint "kurz vor versand";
+                                REMOTE_TRIEXESM(_found_arr,system,doClientRespawn,0);
                                };
                         }else{LOG_ERR("RESPAWNPOSES : WRONG DATATYPE IN FUNCTION PARAMETERS DETECTED!");};
                       };
