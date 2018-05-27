@@ -36,11 +36,11 @@ _trigger_name setTriggerArea [_size, _size, 0, false];
 switch(_idx)do
 {
  case "ACTIVATE":{
-                    _trigger_name setTriggerActivation [MSOT_FRLYTR_SIDE,"PRESENT", false];
+                    _trigger_name setTriggerActivation ["ANYPLAYER","PRESENT", false];
                     _trigger_name setTriggerStatements ["this", "nul = ['MAINTRIGGER',thisTrigger] spawn MSOT_system_fnc_manageMissionCheck",""];
                  };
  case "LEAVE":{
-               _trigger_name setTriggerActivation [MSOT_FRLYTR_SIDE, "NOT PRESENT", false];
+               _trigger_name setTriggerActivation ["ANYPLAYER", "NOT PRESENT", false];
                _trigger_name setTriggerStatements ["this", "nul = ['MAINTRIGGER',thisTrigger] spawn MSOT_system_fnc_manageMissionCheck",""];
               };
  case "DETECTED":{
@@ -53,7 +53,7 @@ switch(_idx)do
                                   "nul = ['MAINTRIGGER',thisTrigger] spawn MSOT_system_fnc_manageMissionCheck",
                                   ""
                                  ];
-                      _trigger_name setTriggerActivation [MSOT_EMYTR_SIDE,"PRESENT", false];
+                      _trigger_name setTriggerActivation ["ANYPLAYER","PRESENT", false];
                       _trigger_name setTriggerStatements _exp_arr;
                     };
 

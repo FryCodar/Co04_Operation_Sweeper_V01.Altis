@@ -22,9 +22,9 @@ switch(_idx)do
    case 1:{
             _task_name = "Task02";
 
-            _task_description_long = "Begeben Sie sich zum SDV, durchqueren Sie die  Ammolofi-Bucht und landen Sie in der Nähe der Ortschaft  KRYA NERA!  Laut unseren Informationen befinden sich vor Ort mindestens 2 Flugabwehrsysteme mitsamt Ihren Besatzungen und Sicherungseinheiten! Zerstören Sie alle Flugabwehrgeschütze! Nennen Sie es Vergeltung für unsere abgeschossenen Helikopter und Flugzeuge! Alles erforderliche für Ihren Auftrag befindet sich bereits an Bord des  SDV! Die erfolgreiche Zerstörung der Flugabwehr ist zwingend erforderlich für den weiteren Verlauf Ihres Einsatzes! Viel Erfolg!";
+            _task_description_long = "Begeben Sie sich zum SDV und durchqueren Sie die Ammolofi-Bucht. Landen Sie in der Nähe der Ortschaft KRYA NERA wo sich Laut unseren Informationen 2 Flugabwehrsysteme mitsamt Ihren Besatzungen und Sicherungseinheiten befinden! Zerstören Sie alle Flugabwehrgeschütze und suchen Sie in der Ortschaft nach weiteren Informationen! Alles erforderliche für Ihren Auftrag befindet sich bereits an Bord des SDV! Die erfolgreiche Zerstörung der Flugabwehr ist zwingend erforderlich für den weiteren Verlauf Ihres Einsatzes! Viel Erfolg!";
 
-            _task_description_forHUD = "Infiltration von Altis/ Zerstörung Flugabwehr";
+            _task_description_forHUD = "Zerstörung Flugabwehr/ Informationen finden";
 
             _task_Type  = "target";
           };

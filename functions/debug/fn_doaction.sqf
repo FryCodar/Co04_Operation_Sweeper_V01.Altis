@@ -37,11 +37,9 @@ if(!hasInterface) exitwith {};
             //[[9148.21,21611.9,0],2000,["CAR","TRUCK"],"DELETE"] call MFUNC(creating,setConvoy);
             //deleteVehicle ((missionNamespace getVariable ["BAGP",[]]) select 0);
 
-
+            [1] execVM "Missions\mission2.sqf";
             //copyToClipboard str (position Tr21);
-            ["RESPAWNPOSES",[20595.6,20106.3,0],[20143.1,19799.4,0]] spawn MFUNC(system,addMissionInfos);
-            //[0,[[20595.6,20106.3,0],[20143.1,19799.4,0]]] spawn MFUNC(system,doClientRespawn);
-            //[0,[[20595.6,20106.3,0],[20143.1,19799.4,0]]]
+
           };
    case 3:{
              If(captive player)then

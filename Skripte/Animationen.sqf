@@ -1,4 +1,6 @@
-﻿Off01 switchMove "Acts_A_M01_briefing";
+If(isMultiplayer)then{If(!isServer)exitWith{};};
+
+Off01 switchMove "Acts_A_M01_briefing";
 //St01 playMove "HubSittingChairUA_move1";
 //St02 playMove "HubSittingChairUB_move1";
 //St03 playMove "HubSittingChairC_move1";

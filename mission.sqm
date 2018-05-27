@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={19644.684,310.63983,29819.887};
-		dir[]={-0.90629745,-0.42163542,0.032797597};
-		up[]={-0.42136607,0.90674591,0.015248161};
-		aside[]={0.036169518,5.4258817e-007,0.99945134};
+		pos[]={19629.254,299.89572,29779.875};
+		dir[]={-0.91298932,-0.22821133,-0.33853251};
+		up[]={-0.21401338,0.97358769,-0.079355679};
+		aside[]={-0.34770182,3.0297088e-007,0.93772125};
 	};
 };
 binarizationWanted=0;
@@ -2210,6 +2210,7 @@ class Mission
 				sizeB=4;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=94;
 			type="EmptyDetectorArea10x10";
@@ -3611,6 +3612,7 @@ class Mission
 			position[]={8483.2695,108.24704,25095.012};
 			class Attributes
 			{
+				name="Tr21";
 				condition="call{this}";
 				onActivation="call{nul=execVM ""Skripte\Animationen2.sqf""; handle = [2] execVM ""Missions\mission1.sqf""; deleteVehicle thisTrigger;}";
 				sizeA=60;
