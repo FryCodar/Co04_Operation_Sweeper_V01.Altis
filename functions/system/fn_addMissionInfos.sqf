@@ -129,13 +129,16 @@ switch(toUpper _index)do
                           If(count _holder > 0)then
                           {
                             _search_it = [2,_holder,_value] call MFUNC(system,getInfoArray);
-                            If(count _search_it == 0)then
+                            If(count _search_it == 1)then
                             {
-                              _add_arr = [_value,[_add_at_choice]];
+                              _add_arr = [_value,_add_at_choice];
                               ARR_ADDVAR(_holder,_add_arr); missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];_output = true;
                               REMOTE_TRIEXESM([0,_add_arr],system,doClientRespawn,([0,-2] select isDedicated));
                             }else{LOG_ERR("RESPAWNPOSES : SAME VALUE IN INFO STORAGE DETECTED");};
-                          }else{_holder = [[_value,_add_at_choice]]; missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];};
+                          }else{
+                                REMOTE_TRIEXESM([0,[_value,_add_at_choice]],system,doClientRespawn,([0,-2] select isDedicated));
+                                _holder = [[_value,_add_at_choice]]; missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];
+                               };
                         }else{LOG_ERR("RESPAWNPOSES : WRONG DATATYPE IN FUNCTION PARAMETERS DETECTED!");};
                       };
    case "MAINTRIGGER":{
