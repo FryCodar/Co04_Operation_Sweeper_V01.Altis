@@ -8,7 +8,7 @@ params ["_idx","_value"];
 switch(_idx)do
 {
   case 0:{
-           _pos = (_value select 0); _resp_pos = ((_value select 1) select 0);
+           _pos = (_value select 0); _resp_pos = (_value select 1);
            _id = [player,_resp_pos] call BFUNC(addRespawnPosition);
            _holder = missionNamespace getVariable [STRVAR_DO(client_respawn_pos),[]]; _add_arr = [_pos,_id];
            ARR_ADDVAR(_holder,_add_arr); missionNamespace setVariable [STRVAR_DO(client_respawn_pos),_holder,false];
@@ -16,7 +16,7 @@ switch(_idx)do
   case 1:{
            _holder = missionNamespace getVariable [STRVAR_DO(client_respawn_pos),[]];
           {
-            _pos = (_x select 0); _resp_pos = ((_x select 1) select 0);
+            _pos = (_x select 0); _resp_pos = (_x select 1);
             _id = [player,_resp_pos] call BFUNC(addRespawnPosition);
            _add_arr = [_pos,_id]; ARR_ADDVAR(_holder,_add_arr);
           }forEach _value;
