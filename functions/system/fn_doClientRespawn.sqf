@@ -1,4 +1,4 @@
-if(!hasInterface)exitWith{};
+If(isMultiplayer)then{if(!hasInterface) exitWith{};};
 #include "msot_components.hpp"
 
 private ["_pos","_resp_pos","_id","_holder","_add_arr","_search_it"];
