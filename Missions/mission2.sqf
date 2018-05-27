@@ -102,6 +102,5 @@ switch(_idx)do
           _triggername = ["LEAVE",[9148.21,21611.9,0],350] call MFUNC(system,setTrigger);
           ["MAINTRIGGER",[9148.21,21611.9,0],[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
           ["RESPAWNPOSES",[20595.6,20106.3,0],[20143.1,19799.4,0]] spawn MFUNC(system,addMissionInfos);
-
         };
 };
