@@ -32,7 +32,7 @@ params ["_men_count",["_is_night",false]];
 
 
 
-If(_men_count < 4)then{_men_count = 4;};
+If(_men_count < 2)then{_men_count = 2;};
 
 _output = [];
 _unit_calc = 0;
