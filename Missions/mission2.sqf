@@ -38,13 +38,13 @@ switch(_idx)do
   case 2:{
             "Neues Lageupdate!" remoteExec ["hint",([0,-2] select isDedicated)];
             [1,"SUCCEEDED"] call MFUNC(tasks,setTask);
+            missionNamespace setVariable ["msot_sweepermis2",true,true];
             _script = {[(_this select 1)] call MFUNC(system,delFromSystem);
                        {deleteVehicle _x}forEach nearestObjects [[9778.05,22219.1,0], ["all"],250];
                        ["RESPAWNPOSES",[9778.05,22219.1,0]] spawn MFUNC(system,doMissionCheck);
                       };
             _triggername = ["LEAVE",[9778.05,22219.1,0],350] call MFUNC(system,setTrigger);
             ["MAINTRIGGER",[9778.05,22219.1,0],[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
-            ["RESPAWNPOSES",[9148.21,21611.9,0],[9153.67,21645.8,0]] spawn MFUNC(system,addMissionInfos);
             sleep 6;
             [1] execVM "Missions\mission3.sqf";
          };
