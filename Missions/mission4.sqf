@@ -29,7 +29,6 @@ switch(_idx)do
             _cars = [(_route_poss select ((count _route_poss) - 1)),(_route_poss select 0),["O_G_Offroad_01_armed_F","TRUCK","O_G_Offroad_01_armed_F"],"DELETE"] call MFUNC(creating,setConvoy);
            If(count _cars > 0)then
            {
-             hint "läuft rein";
              _script = {"Sie haben ein Fahrzeug aus dem Konvoi zerstört" remoteExec ["hint",([0,-2] select isDedicated)];};
             {
              ["MAINTARGETS",_main_pos,[_x,"",_script]] spawn MFUNC(system,addMissionInfos);
