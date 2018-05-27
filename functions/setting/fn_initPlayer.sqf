@@ -49,7 +49,7 @@ If(count (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]) > 0)then
   [1,(missionNamespace getVariable [STRVAR_DO(resp_poses),[]])] call MFUNC(system,doClientRespawn);
 };
 //Checkt AddAction Einträge
-If(count (missionNamespace getVariable [STRVAR_DO(action_storgae),[]]) > 0)then
+If(count (missionNamespace getVariable [STRVAR_DO(action_storage),[]]) > 0)then
 {
   {_x call MFUNC(system,setClientAction);}forEach (missionNamespace getVariable [STRVAR_DO(action_storage),[]]);
 };
