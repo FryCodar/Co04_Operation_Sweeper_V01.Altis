@@ -139,7 +139,6 @@ switch(toUpper _index)do
                                 _add_arr = [_value,_add_at_choice];
                                 _holder = [_add_arr]; missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,true];
                                 _found_arr = [0,_add_arr];
-                                hint "kurz vor versand";
                                 REMOTE_TRIEXESM(_found_arr,system,doClientRespawn,0);
                                };
                         }else{LOG_ERR("RESPAWNPOSES : WRONG DATATYPE IN FUNCTION PARAMETERS DETECTED!");};
