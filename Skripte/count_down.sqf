@@ -47,7 +47,6 @@ If(_counter < 1 && {missionNamespace getVariable ["msot_run_countdown",true]})th
   sleep 15;
   If(isMultiplayer && _end_mission)then{"EveryoneLost" call BIS_fnc_endMissionServer;};
 };
- missionNamespace setVariable ["msot_run_countdown",true,true];
 };
 
 

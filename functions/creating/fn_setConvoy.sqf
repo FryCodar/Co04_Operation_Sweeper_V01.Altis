@@ -70,6 +70,7 @@ If(count _street_pos > 0)then
              };
         sleep 0.02;
       };
+      {(driver _x) assignAsDriver _x;}forEach _output;
       [_grp] call MFUNC(system,setUnitSkill);sleep 0.2;
       If(count (missionNamespace getVariable[STRVAR_DO(convoy_route),[]]) > 0)then
       {
@@ -90,16 +91,28 @@ If(count _street_pos > 0)then
             sleep 0.1;
             [_grp,_street_wppos,1,"MOVE","AWARE","GREEN","NORMAL","FILE"] call CBA_fnc_addWaypoint;
             [_grp,_street_wppos,2,"TR UNLOAD","AWARE","GREEN","NORMAL","FILE"] call CBA_fnc_addWaypoint;
+            [_grp,_street_wppos] spawn {sleep 10;
+                                        private _run = false;
+                                        {
+                                          If(alive _x && (speed (vehicle _x) < 1))then{_x doMove (_this select 1);_run = true;};
+                                          If(_run)then
+                                          {
+                                            [(_this select 0),(_this select 1),1,"MOVE","AWARE","GREEN","NORMAL","FILE"] call CBA_fnc_addWaypoint;
+                                            [(_this select 0),(_this select 1),2,"TR UNLOAD","AWARE","GREEN","NORMAL","FILE"] call CBA_fnc_addWaypoint;
+                                          };
+                                        }forEach units (_this select 0);
+                                       };
+
           };
-      {_x setConvoySeparation 15;}forEach _output;
-      _script = {If(!(missionNamespace getVariable["msot_convoy_stopped",false]))then
-                 {
-                   {if(alive _x && canMove _x)then{_x limitSpeed 40;};}forEach _this;
-                 }else{
-                   ["msot_speed_ctrl", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
-                 };
-                };
-       ["msot_speed_ctrl","onEachFrame",_script,_output] call BFUNC(addStackedEventHandler);
+          {_x setConvoySeparation 15;}forEach _output;
+          _script = {If(!(missionNamespace getVariable["msot_convoy_stopped",false]))then
+                     {
+                       {if(alive _x && canMove _x)then{_x limitSpeed 40;};}forEach _this;
+                     }else{
+                       ["msot_speed_ctrl", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+                     };
+                    };
+           ["msot_speed_ctrl","onEachFrame",_script,_output] call BFUNC(addStackedEventHandler);
        //STARTE KONTROLLE DES KONVOI
       [_main_pos,_pat_radius,_delopat,_vec_store] spawn
       {

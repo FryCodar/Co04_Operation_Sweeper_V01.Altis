@@ -33,7 +33,7 @@ switch(_idx)do
 
             _task_description_long = "Nutzen Sie das von Ihnen verursachte Durcheinander und dringen entlang des Flusslaufes weiter in Richtung Süden vor! Im Bereich Planquadrat 920216 befindet sich ein kleiner privater Flugplatz. 1. Beschaffen Sie sich dort ein Fluggerät! Sollten Sie auf ziviles Personal  treffen, so ist dieses nichtlethal aus dem Verkehr zu ziehen! KEINE zivilen Verluste! Doch Vorsicht! Bei dieser Bevölkerungsgruppe ist praktisch jeder bewaffnet!";
 
-            _task_description_forHUD = "Gefangennahme Flugplatzpersonal/ Beschaffung Helikopterschlüssel";
+            _task_description_forHUD = "Beschaffung Helikopterschlüssel / Bordbuch";
 
             _task_Type  = "heli";
           };
