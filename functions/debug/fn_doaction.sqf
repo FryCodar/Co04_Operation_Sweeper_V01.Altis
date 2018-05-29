@@ -37,7 +37,7 @@ if(!hasInterface) exitwith {};
             //[[9148.21,21611.9,0],2000,["CAR","TRUCK"],"DELETE"] call MFUNC(creating,setConvoy);
             //deleteVehicle ((missionNamespace getVariable ["BAGP",[]]) select 0);
 
-            [1] execVM "Missions\mission3.sqf";
+            [1] execVM "Missions\mission4.sqf";
             //copyToClipboard str (position Tr21);
             //missionNamespace setVariable ["msot_sweepermis2",true,true];
           };
