@@ -58,14 +58,23 @@ switch(_idx)do
    case 5:{
             _task_name = "Task06";
 
-            _task_description_long = "Infiltrieren Sie unbemerkt die Insel! Suchen Sie den Sprengsatz! Bei Auffindung entschärfen Sie  die Bombe! Alle Personen auf der Insel werden als feindlich eingestuft!  Anzahl und Ausrüstung des Gegners ist unbekannt!";
+            _task_description_long = "Begeben Sie sich nach Faronaki, um dort mit dem Boot oder entsprechender Ausrüstung auf die Insel Makrynisi zu gelangen!";
 
-            _task_description_forHUD = "Infiltration und Säuberung der Insel Makronysi";
+            _task_description_forHUD = "Bewegung nach Faronaki";
 
-            _task_Type  = "attack";
+            _task_Type  = "boat";
           };
    case 6:{
             _task_name = "Task07";
+
+            _task_description_long = "Infiltrieren Sie unbemerkt die Insel! Suchen Sie den Sprengsatz! Bei Auffindung entschärfen Sie  die Bombe! Alle Personen auf der Insel werden als feindlich eingestuft!  Anzahl und Ausrüstung des Gegners ist unbekannt!";
+
+            _task_description_forHUD = "Infiltration und Säuberung der Insel Makrynisi";
+
+            _task_Type  = "attack";
+          };
+   case 7:{
+            _task_name = "Task08";
 
             _task_description_long = "Durchsuchen Sie das Labor nach weiteren Informationen und Daten und sichern Sie diese!";
 
@@ -73,8 +82,8 @@ switch(_idx)do
 
             _task_Type  = "download";
           };
-   case 7:{
-            _task_name = "Task08";
+   case 8:{
+            _task_name = "Task09";
 
             _task_description_long = "Suchen Sie nach einer Möglichkeit, die Insel zu verlassen und verlegen Sie schnellstmöglich in die Stadt Pyrgos!";
 
@@ -82,8 +91,8 @@ switch(_idx)do
 
             _task_Type  = "move";
           };
-   case 8:{
-            _task_name = "Task09";
+   case 9:{
+            _task_name = "Task10";
 
             _task_description_long = "Suchen Sie nach der Bombe und Entschärfen Sie den Sprengsatz! Eleminieren Sie jede Person, die Sie daran hindern will!";
 
@@ -91,14 +100,14 @@ switch(_idx)do
 
             _task_Type  = "destroy";
           };
-   case 9:{
-            _task_name = "Task10";
+  case 10:{
+            _task_name = "Task11";
 
             _task_description_long = "Nachdem alles erledigt ist, sehen Sie zu, dass Sie dort schnellstmöglich verschwinden! Ihr Taxi wartet südlich von hier beim KAP MAKRINOS!!!";
 
             _task_description_forHUD = "Exfiltration";
 
-            _task_Type  = "destroy";
+            _task_Type  = "getout ";
           };
 };
 

@@ -21,7 +21,7 @@ switch(_idx)do
                        [8,"AUTOASSIGNED",[16588.3,12779.4,0]] call MFUNC(tasks,setTask);
                      };
            _triggername = ["ACTIVATE",_main_pos,_main_radius] call MFUNC(system,setTrigger);
-           ["MAINTRIGGER",_main_pos,[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
+           ["MAINTRIGGER",_main_pos,[_triggername,_script,0,false]] call MFUNC(system,addMissionInfos);
            _force_calc = [([] call MFUNC(system,getPlayerCount)),([] call MFUNC(usage,checkNight))] call MFUNC(system,getForcesCalc);
            [_main_pos,300,((_force_calc select 0) + 3),(_force_calc select 1),"MIXED_ALL","AREA"] call MFUNC(creating,setUnits);
            [[_main_pos,_secmain_pos],_secmain_radius,((_force_calc select 0) + 2),1,"MIXED_ALL","HOUSE"] call MFUNC(creating,setUnits);
