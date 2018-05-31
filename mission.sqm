@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=789;
+		nextID=796;
 	};
 	class Camera
 	{
-		pos[]={14907.666,100.69481,11061.271};
-		dir[]={-0.9908371,-0.11413553,0.072714314};
-		up[]={-0.11386899,0.99345762,0.0083569363};
-		aside[]={0.073195897,-1.9217587e-006,0.99735415};
+		pos[]={14763.9,259.35446,11143.035};
+		dir[]={-0.88070571,-0.21490301,0.42219597};
+		up[]={-0.19381858,0.97662479,0.092914};
+		aside[]={0.43229887,-1.6567865e-006,0.90177292};
 	};
 };
 binarizationWanted=0;
@@ -7577,17 +7577,18 @@ class Mission
 		class Item219
 		{
 			dataType="Trigger";
-			position[]={10177.06,35.876133,22053.16};
+			position[]={10177.06,35.876137,22053.16};
 			class Attributes
 			{
 				condition="call{missionNamespace getVariable [""msot_sweepermis2"",false]}";
-				onActivation="call{deleteVehicle thisTrigger; hint ""run run run"";}";
+				onActivation="call{deleteVehicle thisTrigger;}";
 				sizeA=1;
 				sizeB=1;
 				sizeC=1;
 			};
 			id=506;
 			type="EmptyDetector";
+			atlOffset=3.8146973e-006;
 		};
 		class Item220
 		{
@@ -18206,7 +18207,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={13589.723,16.286404,12161.566};
-			angle=1.6583068;
+			angle=1.6583064;
 			class Attributes
 			{
 				condition="call{this && {missionNamespace getVariable [""msot_sweepermis5"",false]}}";

@@ -22,7 +22,10 @@ switch(_idx)do
             ["GROUPS",_main_pos,[_spec_grp]] call MFUNC(system,addToSystem);
             _force_calc = [([] call MFUNC(system,getPlayerCount)),([] call MFUNC(usage,checkNight))] call MFUNC(system,getForcesCalc);
             [_main_pos,_main_radius,(_force_calc select 0),(_force_calc select 1),"MIXED_ALL","MIXED"] call MFUNC(creating,setUnits);
-            _script = {[(_this select 1)] call MFUNC(system,setTargetBehavior);sleep 1;};
+            _script = {
+                        [(_this select 1)] call MFUNC(system,setTargetBehavior);sleep 1;
+                        missionNamespace setVariable[STRVAR_DO(reforce_ctrl),true,true];
+                      };
             _triggername = ["DETECTED",_main_pos,_main_radius] call MFUNC(system,setTrigger);
             ["MAINTRIGGER",_main_pos,[_triggername,_script,0,false]] call MFUNC(system,addMissionInfos);
          };
@@ -31,6 +34,23 @@ switch(_idx)do
          };
   case 3:{
             [7,"SUCCEEDED"] call MFUNC(tasks,setTask);
+            If(missionNamespace getVariable[STRVAR_DO(reforce_ctrl),false])then
+            {
+              _script = {
+                          missionNamespace setVariable [STRVAR_DO(artillery_ctrl),false,false];
+                          sleep 1;
+                          missionNamespace setVariable[STRVAR_DO(reforce_ctrl),false,true];
+                        };
+              _triggername = ["LEAVE",[13590.8,12167.2,0],200] call MFUNC(system,setTrigger);
+              ["MAINTRIGGER",[13590.8,12167.2,0],[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
+              missionNamespace setVariable [STRVAR_DO(artillery_ctrl),true,false];
+              [] spawn {
+                        sleep 10;
+                        "Ihre Aktivitäten am Laptop sind nicht unbemerkt geblieben!" remoteExec ["hint",([0,-2] select isDedicated)];
+                        sleep 5;
+                        [[13590.8,12167.2,0],190,40,"MORTAR"] spawn MFUNC(creating,setArtillery);
+                       };
+            };
          };
   case 4:{
             [] spawn {

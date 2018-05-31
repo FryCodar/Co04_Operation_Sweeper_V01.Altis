@@ -65,6 +65,7 @@ switch(_idx)do
               sleep 5;
               [[_main_pos,_secmain_pos],70,3,3,"MIXED_ALL","BORDER"] call MFUNC(creating,setUnits);
               "Man hat Sie bemerkt!\nWeitere Truppen wurden angefordert!" remoteExec ["hint",([0,-2] select isDedicated)];
+              missionNamespace setVariable[STRVAR_DO(reforce_ctrl),false,true];
             };
          };
   case 5:{
@@ -74,7 +75,7 @@ switch(_idx)do
                         [6] execVM "Missions\mission7.sqf";
                       };
             _triggername = ["LEAVE",_secmain_pos,_secmain_radius] call MFUNC(system,setTrigger);
-            ["MAINTRIGGER",_secmain_pos,[_triggername,_script,0,false]] call MFUNC(system,addMissionInfos);
+            ["MAINTRIGGER",_secmain_pos,[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
             missionNamespace setVariable [STRVAR_DO(artillery_ctrl),true,false];
             [] spawn {
                         sleep 5;
@@ -86,7 +87,7 @@ switch(_idx)do
                         {
                           [[[16654.5,12667.9,0],[16588.3,12779.4,0]],70,3,3,"MIXED_ALL","BORDER"] call MFUNC(creating,setUnits);
                           sleep _s_timer;
-                          _s_timer = _s_timer + 5;
+                          _s_timer = _s_timer + (_s_timer * 2);
                         };
                      };
          };
