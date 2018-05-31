@@ -94,7 +94,7 @@ switch(_idx)do
   case 6:{
           _script = { [(_this select 1)] call MFUNC(system,delFromSystem);
                       {deleteVehicle _x}forEach nearestObjects [[16654.5,12667.9,0], ["all"],500];
-                      "Ende" remoteExec ["playMusic",([0,-2] select isDedicated)];
+                      "Ende" remoteExec ["playMusic",([0,-2] select isDedicated)];      
                     };
           _triggername = ["LEAVE",_main_pos,(_main_radius + 200)] call MFUNC(system,setTrigger);
           ["MAINTRIGGER",_main_pos,[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
