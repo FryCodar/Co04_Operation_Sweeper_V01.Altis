@@ -49,7 +49,7 @@ If(_do_it)then
        _bombname = createVehicle [_expl_class,_explosion_pos,[],0,"NONE"];
        deleteVehicle _imp_obj;
     };
-    _sleeper = (random 10);
+    _sleeper = (random 8);
     If(_sleeper <= 2)then{_sleeper = 2;};
     sleep _sleeper;
   };

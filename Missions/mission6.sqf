@@ -45,10 +45,10 @@ switch(_idx)do
               ["MAINTRIGGER",[13590.8,12167.2,0],[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
               missionNamespace setVariable [STRVAR_DO(artillery_ctrl),true,false];
               [] spawn {
-                        sleep 10;
-                        "Ihre Aktivitäten am Laptop sind nicht unbemerkt geblieben!" remoteExec ["hint",([0,-2] select isDedicated)];
-                        sleep 5;
+                        sleep 15;
                         [[13590.8,12167.2,0],190,40,"MORTAR"] spawn MFUNC(creating,setArtillery);
+                        sleep 15;
+                        "Ihre Aktivitäten am Laptop sind nicht unbemerkt geblieben!" remoteExec ["hint",([0,-2] select isDedicated)];
                        };
             };
          };
