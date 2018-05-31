@@ -3,11 +3,12 @@ if(!hasInterface) exitwith {};
 
 params ["_obj","_caller","_idx","_xtra"];
 
-hint "Press Mouse-Button to Teleport you on Mouseposition";
-sleep 1;
+//hint "Press Mouse-Button to Teleport you on Mouseposition";
+
 openMap true;
+cutText ["<t color='#f000ff00' size='2'>Press Mouse-Button to Teleport you on Mouseposition</t>","PLAIN DOWN",-1,true,true];
 //onMapSingleClick "Player setPos _pos;openMap false;hintSilent """";onMapSingleClick """"; true;";
-onMapSingleClick {cutText ["<t color='#ff0000' size='2'>Click again to travel</t>","PLAIN DOWN",-1,true,true];onMapSingleClick {MSOT_STOP_TRAVEL_COUNTER = false;cutText ["","PLAIN DOWN",0,true,true];Player setPos _pos;openMap false;onMapSingleClick "";};};
+onMapSingleClick {cutText ["<t color='#f000ff00' size='2'>Click again to travel</t>","PLAIN DOWN",-1,true,true];onMapSingleClick {MSOT_STOP_TRAVEL_COUNTER = false;cutText ["","PLAIN DOWN",0,true,true];Player setPos _pos;openMap false;onMapSingleClick "";};};
 [30] spawn {
 
 params ["_time"];
