@@ -39,6 +39,14 @@
     default = 1;
     isGlobal = 1;
   };
+  class play_intro_music
+  {
+    title = "Spiele Intro Music ab:";
+    texts[] = {"Nein","Ja"};
+    values[] = {0,1};
+    default = 1;
+    isGlobal = 1;
+  };
   class start_with_nothing
   {
     title = "Starte ohne Ausrüstung:";
@@ -52,7 +60,7 @@
     title = "DEBUG MODUS:";
     texts[] = {"Nein","Ja"};
     values[] = {0,1};
-    default = 0;
+    default = 1;
     isGlobal = 1;
   };
   class who_is_medic

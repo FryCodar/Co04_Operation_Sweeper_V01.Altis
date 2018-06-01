@@ -36,8 +36,8 @@ if(!hasInterface) exitwith {};
             //player playMoveNow "AinvPknlMstpSlayWpstDnon_medicOther";
             //[[9148.21,21611.9,0],2000,["CAR","TRUCK"],"DELETE"] call MFUNC(creating,setConvoy);
             //deleteVehicle ((missionNamespace getVariable ["BAGP",[]]) select 0);
-
-            //[4] execVM "Missions\mission7.sqf";
+            //EventTrack01_F_EPA
+            //[1] execVM "Missions\mission1.sqf";
             //copyToClipboard str (position Tr21);
             //missionNamespace setVariable ["msot_sweepermis2",true,true];
           };

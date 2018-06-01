@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2085;
+		nextID=2088;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=810;
+		nextID=824;
 	};
 	class Camera
 	{
-		pos[]={19552.41,90.419975,29903.537};
-		dir[]={-0.54831684,-0.16639856,-0.81957096};
-		up[]={-0.092538849,0.98605287,-0.13831674};
-		aside[]={-0.83115917,-1.1531665e-007,0.55606896};
+		pos[]={19455.645,44.804462,29760.738};
+		dir[]={-0.48826805,-0.23603469,0.84022105};
+		up[]={-0.11861309,0.97173321,0.20411327};
+		aside[]={0.86465263,-1.1286465e-007,0.50246656};
 	};
 };
 binarizationWanted=0;
@@ -184,13 +184,14 @@ addons[]=
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Characters_F_Patrol",
 	"A3_Structures_F_Mil_Flags",
-	"A3_Structures_F_Orange_Humanitarian_Camps"
+	"A3_Structures_F_Orange_Humanitarian_Camps",
+	"cba_main"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=79;
+		items=80;
 		class Item0
 		{
 			className="A3_Boat_F_Jets";
@@ -730,12 +731,19 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item79
+		{
+			className="cba_main";
+			name="Community Base Addons - Main Component";
+			author="CBA-Team";
+			url="https://www.github.com/CBATeam/CBA_A3";
+		};
 	};
 };
 randomSeed=9097341;
 class ScenarioData
 {
-	author="Architheutis75";
+	author="Architheutis75/Fry";
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
@@ -801,7 +809,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=839;
+		items=840;
 		class Item0
 		{
 			dataType="Object";
@@ -1090,17 +1098,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19407.584,24.128441,29828.586};
+				position[]={19407.584,24.128479,29828.586};
 				angles[]={0,1.5707964,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=35;
 			type="Land_CampingChair_V2_F";
-			atlOffset=0.00050544739;
+			atlOffset=0.00054359436;
 		};
 		class Item4
 		{
@@ -1124,32 +1133,84 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19407.867,24.127935,29827.584};
-				angles[]={-0,1.5707964,-0};
+				position[]={19407.779,24.127487,29827.611};
+				angles[]={0,1.5707964,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="Stuhl1";
+				disableSimulation=1;
 			};
 			id=37;
 			type="Land_CampingChair_V2_F";
+			atlOffset=0.056716919;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item6
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19409.086,24.127934,29826.547};
-				angles[]={-0,1.5969684,-0};
+				position[]={19408.984,24.127487,29826.58};
+				angles[]={0,1.5969763,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="Stuhl2";
+				disableSimulation=1;
 			};
 			id=38;
 			type="Land_CampingChair_V2_F";
+			atlOffset=0.056716919;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item7
 		{
@@ -1157,7 +1218,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={19409.027,24.127935,29827.549};
-				angles[]={-0,1.5335795,-0};
+				angles[]={0,1.5335795,0};
 			};
 			side="Empty";
 			flags=4;
@@ -1172,16 +1233,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19409.021,24.127935,29828.611};
-				angles[]={-0,1.5035661,-0};
+				position[]={19408.885,24.127487,29828.627};
+				angles[]={0,1.5035663,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="Stuhl3";
 			};
 			id=40;
 			type="Land_CampingChair_V2_F";
+			atlOffset=0.056716919;
 		};
 		class Item9
 		{
@@ -1377,7 +1440,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this playActionNow ""HubSittingChairC_move1"";}";
+						init="call{[this, ""SIT3"", ""NONE""] call BIS_fnc_ambientAnim;}";
 						name="St03";
 						ignoreByDynSimulGrid=1;
 						class Inventory
@@ -1462,7 +1525,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.56864518;
-						init="call{this switchAction ""HubSittingChairUA_move1"";}";
+						init="call{[this, ""SIT"", ""NONE""] call BIS_fnc_ambientAnim;}";
 						name="St01";
 						ignoreByDynSimulGrid=1;
 						class Inventory
@@ -1546,7 +1609,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this switchAction ""HubSittingChairUB_move1"";}";
+						init="call{[this, ""SIT1"", ""NONE""] call BIS_fnc_ambientAnim;}";
 						name="St02";
 						ignoreByDynSimulGrid=1;
 						class Inventory
@@ -6840,7 +6903,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8849.9121,78.792435,23457.74};
+						position[]={8849.9053,78.781937,23457.979};
 						angles[]={0.0013439035,0,0.023998277};
 					};
 					side="East";
@@ -6850,13 +6913,14 @@ class Mission
 					};
 					id=474;
 					type="O_crew_F";
+					atlOffset=-0.010002136;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8849.9121,78.792435,23457.74};
+						position[]={8849.9053,78.781937,23457.979};
 						angles[]={0.0013439035,0,0.023998277};
 					};
 					side="East";
@@ -6866,13 +6930,14 @@ class Mission
 					};
 					id=475;
 					type="O_crew_F";
+					atlOffset=-0.010002136;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8849.9121,78.792435,23457.74};
+						position[]={8849.9053,78.781937,23457.979};
 						angles[]={0.0013439035,0,0.023998277};
 					};
 					side="East";
@@ -6882,6 +6947,7 @@ class Mission
 					};
 					id=476;
 					type="O_crew_F";
+					atlOffset=-0.010002136;
 				};
 			};
 			class Attributes
@@ -6931,28 +6997,28 @@ class Mission
 				};
 			};
 			id=472;
-			atlOffset=-0.010177612;
+			atlOffset=-0.010002136;
 		};
 		class Item208
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8849.8379,81.591156,23457.932};
+				position[]={8849.8379,81.591331,23457.932};
 				angles[]={0.0013439035,0,0.023998277};
 			};
 			side="East";
 			flags=6;
 			class Attributes
 			{
-				presence=0.5;
+				presence=0.65249074;
 				textures="Hex";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 			};
 			id=473;
 			type="O_APC_Tracked_02_AA_F";
-			atlOffset=-0.010177612;
+			atlOffset=-0.010002136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7261,7 +7327,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				presence=0.5;
+				presence=0.80074573;
 				textures="Hex";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
@@ -9222,11 +9288,12 @@ class Mission
 			angle=1.2772145;
 			class Attributes
 			{
-				condition="call{this && {local player}}";
-				onActivation="call{playMusic ""Musik01"";deleteVehicle thisTrigger;}";
+				condition="call{this}";
+				onActivation="call{""Musik01"" remoteExec [""playMusic"",([0,-2] select isDedicated)]; deleteVehicle thisTrigger;}";
 				sizeA=4000;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=678;
 			type="EmptyDetectorAreaR250";
@@ -11092,7 +11159,7 @@ class Mission
 			};
 			id=994;
 			type="Land_WoodenTable_small_F";
-			atlOffset=7.1525574e-005;
+			atlOffset=9.5367432e-007;
 		};
 		class Item278
 		{
@@ -11120,13 +11187,13 @@ class Mission
 				angles[]={6.2820935,3.5626886,6.2803173};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				createAsSimpleObject=1;
 			};
 			id=996;
 			type="Land_ChairPlastic_F";
+			atlOffset=0.39031029;
 		};
 		class Item280
 		{
@@ -11213,7 +11280,6 @@ class Mission
 			};
 			id=1003;
 			type="Land_CampingTable_small_F";
-			atlOffset=6.8664551e-005;
 		};
 		class Item285
 		{
@@ -11230,7 +11296,7 @@ class Mission
 			};
 			id=1004;
 			type="Land_Map_unfolded_Altis_F";
-			atlOffset=0.81307411;
+			atlOffset=0.81300354;
 		};
 		class Item286
 		{
@@ -11246,7 +11312,7 @@ class Mission
 			};
 			id=1005;
 			type="Land_Sleeping_bag_brown_F";
-			atlOffset=0.041067123;
+			atlOffset=0.040998459;
 		};
 		class Item287
 		{
@@ -11257,12 +11323,12 @@ class Mission
 				angles[]={0,3.5446246,6.2826972};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=1006;
 			type="Land_Sleeping_bag_blue_F";
+			atlOffset=2.867136;
 		};
 		class Item288
 		{
@@ -11278,7 +11344,7 @@ class Mission
 			};
 			id=1007;
 			type="Land_Sleeping_bag_F";
-			atlOffset=2.8008213;
+			atlOffset=2.8007507;
 		};
 		class Item289
 		{
@@ -22922,11 +22988,11 @@ class Mission
 		class Item799
 		{
 			dataType="Marker";
-			position[]={17777.744,-0.0060000001,29721.551};
+			position[]={15584.132,0,29755.037};
 			name="campos2";
 			type="Empty";
 			id=1956;
-			atlOffset=185.964;
+			atlOffset=185.97;
 		};
 		class Item800
 		{
@@ -23597,6 +23663,7 @@ class Mission
 			};
 			id=2041;
 			type="BWA3_Box_Gear_Tropen";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24097,12 +24164,12 @@ class Mission
 				angles[]={0,1.3365216,6.2826972};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=2074;
 			type="Land_CampingChair_V1_F";
+			atlOffset=2.8602972;
 		};
 		class Item833
 		{
@@ -24359,6 +24426,17 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item839
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20940.514,-0.099999338,29516.193};
+			};
+			id=2086;
+			type="CBA_main_require";
+			atlOffset=185.87;
 		};
 	};
 	class Connections
