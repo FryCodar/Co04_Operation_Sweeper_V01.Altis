@@ -60,7 +60,7 @@
     title = "DEBUG MODUS:";
     texts[] = {"Nein","Ja"};
     values[] = {0,1};
-    default = 1;
+    default = 0;
     isGlobal = 1;
   };
   class who_is_medic

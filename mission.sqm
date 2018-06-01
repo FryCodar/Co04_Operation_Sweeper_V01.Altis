@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=824;
+		nextID=831;
 	};
 	class Camera
 	{
-		pos[]={19455.645,44.804462,29760.738};
+		pos[]={19461.84,50.300148,29733.041};
 		dir[]={-0.48826805,-0.23603469,0.84022105};
 		up[]={-0.11861309,0.97173321,0.20411327};
 		aside[]={0.86465263,-1.1286465e-007,0.50246656};
@@ -2284,7 +2284,7 @@ class Mission
 			position[]={19409.027,0.037994385,29826.551};
 			class Attributes
 			{
-				condition="call{this && DEBUG_MODE}";
+				condition="call{this}";
 				onActivation="call{nul=execVM ""Skripte\Animationen.sqf""; handle = [1] execVM ""Missions\mission1.sqf"";deleteVehicle thisTrigger;}";
 				sizeA=4;
 				sizeB=4;
@@ -22988,7 +22988,7 @@ class Mission
 		class Item799
 		{
 			dataType="Marker";
-			position[]={15584.132,0,29755.037};
+			position[]={14644.103,0,29434.02};
 			name="campos2";
 			type="Empty";
 			id=1956;
