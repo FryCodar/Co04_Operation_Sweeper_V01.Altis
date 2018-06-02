@@ -19,7 +19,7 @@ If(isServer)then
 };
 If(hasInterface)then
 {
-	setViewDistance 4000;
+	setViewDistance 5000;
 	player disableConversation true;
 };
 

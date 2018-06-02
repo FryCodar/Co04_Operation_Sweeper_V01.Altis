@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2106;
+		nextID=2107;
 	};
 	class MarkerIDProvider
 	{
@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=845;
+		nextID=852;
 	};
 	class Camera
 	{
-		pos[]={22620.646,677.93945,29983.965};
+		pos[]={19906.154,131.41034,29783.682};
 		dir[]={-0.993137,-0.09928818,0.063601002};
 		up[]={-0.099188596,0.99504614,0.0063530914};
 		aside[]={0.063919179,-9.7265547e-007,0.99808162};
@@ -788,13 +788,12 @@ class Mission
 		briefingName="Operation Sweeper";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
+		startWeather=0;
+		startWind=0;
 		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
+		forecastWeather=0.10182983;
+		forecastWind=0;
 		forecastWaves=0.1;
-		forecastLightnings=0.1;
 		rainForced=1;
 		lightningsForced=1;
 		wavesForced=1;
@@ -804,8 +803,10 @@ class Mission
 		day=24;
 		hour=12;
 		minute=0;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
+		startFogBase=-1000;
+		forecastFogBase=-1000;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Entities
 	{
@@ -2424,7 +2425,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={19371.381,25.911343,29758.523};
-				angles[]={0.00048828125,4.6873083,-0};
+				angles[]={0.00048828125,4.6873083,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2627,7 +2628,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={19400.137,25.8969,29760.414};
-				angles[]={0,4.7092123,-0};
+				angles[]={0,4.7092123,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22986,7 +22987,7 @@ class Mission
 		class Item799
 		{
 			dataType="Marker";
-			position[]={14644.103,0,29434.02};
+			position[]={16339.983,0,28081.629};
 			name="campos2";
 			type="Empty";
 			id=1956;
@@ -23336,11 +23337,11 @@ class Mission
 		class Item807
 		{
 			dataType="Marker";
-			position[]={9474.3652,0,29099.676};
+			position[]={10940.104,0,25152.168};
 			name="campos1";
 			type="Empty";
 			id=1957;
-			atlOffset=183.50999;
+			atlOffset=182.17426;
 		};
 		class Item808
 		{
