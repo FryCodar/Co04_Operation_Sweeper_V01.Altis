@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2088;
+		nextID=2106;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=831;
+		nextID=845;
 	};
 	class Camera
 	{
-		pos[]={19461.84,50.300148,29733.041};
-		dir[]={-0.48826805,-0.23603469,0.84022105};
-		up[]={-0.11861309,0.97173321,0.20411327};
-		aside[]={0.86465263,-1.1286465e-007,0.50246656};
+		pos[]={22620.646,677.93945,29983.965};
+		dir[]={-0.993137,-0.09928818,0.063601002};
+		up[]={-0.099188596,0.99504614,0.0063530914};
+		aside[]={0.063919179,-9.7265547e-007,0.99808162};
 	};
 };
 binarizationWanted=0;
@@ -2423,8 +2423,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19348.092,25.914459,29772.371};
-				angles[]={0,4.6873083,0};
+				position[]={19371.381,25.911343,29758.523};
+				angles[]={0.00048828125,4.6873083,-0};
 			};
 			side="Empty";
 			flags=4;
@@ -2436,7 +2436,6 @@ class Mission
 			};
 			id=99;
 			type="B_Plane_CAS_01_dynamicLoadout_F";
-			atlOffset=0.00016212463;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2627,8 +2626,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={19245.264,25.906464,29788.205};
-				angles[]={0.00143117,4.7092123,0};
+				position[]={19400.137,25.8969,29760.414};
+				angles[]={0,4.7092123,-0};
 			};
 			side="Empty";
 			flags=4;
@@ -2640,7 +2639,6 @@ class Mission
 			};
 			id=107;
 			type="B_Plane_CAS_01_dynamicLoadout_F";
-			atlOffset=0.00072479248;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23001,6 +22999,7 @@ class Mission
 			angle=1.5683703;
 			class Attributes
 			{
+				name="Tr21";
 				condition="call{this && (""Man"" countType thislist) > 0}";
 				onActivation="call{{If(_x isKindOf ""Man"")then{_x moveInCargo H1;};}forEach thislist;}";
 				sizeA=70;
@@ -23337,11 +23336,11 @@ class Mission
 		class Item807
 		{
 			dataType="Marker";
-			position[]={9362.3867,-0.31445313,29730.83};
+			position[]={9474.3652,0,29099.676};
 			name="campos1";
 			type="Empty";
 			id=1957;
-			atlOffset=183.19554;
+			atlOffset=183.50999;
 		};
 		class Item808
 		{
