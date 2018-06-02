@@ -44,11 +44,11 @@ _static_weapon_calc = 0;
 
   switch(["mission_difficulty",2] call BFUNC(getParamValue))do
   {
-    case 0:{_group_calc = 1.1;_unit_calc = 3;};
-    case 1:{_group_calc = 1.1;_unit_calc = 4;};
-    case 2:{_group_calc = 0.9;_unit_calc = 4;_vehicle_calc = 0.2;};
-    case 3:{_group_calc = 0.9;_unit_calc = 5;_vehicle_calc = 0.3;_static_weapon_calc = 0.4;};
-    default {_group_calc = 0.9;_unit_calc = 6;_vehicle_calc = 0.3;_static_weapon_calc = 0.4;};
+    case 0:{_group_calc = 0.9;_unit_calc = 3;};
+    case 1:{_group_calc = 0.8;_unit_calc = 4;};
+    case 2:{_group_calc = 0.615;_unit_calc = 4;_vehicle_calc = 0.2;};
+    case 3:{_group_calc = 0.615;_unit_calc = 5;_vehicle_calc = 0.3;_static_weapon_calc = 0.4;};
+    default {_group_calc = 0.615;_unit_calc = 6;_vehicle_calc = 0.3;_static_weapon_calc = 0.4;};
   };
 
   if(_is_night)then
