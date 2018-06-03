@@ -4,7 +4,6 @@ If(isMultiplayer)then{if(!hasInterface) exitWith{};};
 private ["_pos","_resp_pos","_id","_holder","_add_arr","_search_it"];
 params ["_idx","_value"];
 
-
 switch(_idx)do
 {
   case 0:{
@@ -30,7 +29,7 @@ switch(_idx)do
              If(count _search_it > 0)then
              {
                _add_arr = _holder select (_search_it select 0);
-               [player,(_add_arr select 1)] call BFUNC(removeRespawnPosition);
+               (_add_arr select 1) call BFUNC(removeRespawnPosition);
                ARR_MINIDX(_holder,(_search_it select 0));
                missionNamespace setVariable [STRVAR_DO(client_respawn_pos),_holder,false];
              };
