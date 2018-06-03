@@ -37,11 +37,7 @@ if(!hasInterface) exitwith {};
             //[1] execVM "Missions\mission1.sqf";
             //copyToClipboard str (position Tr21);
             //missionNamespace setVariable ["msot_sweepermis2",true,true];
-            ["RESPAWNPOSES",[9148.21,21611.9,0],[9153.67,21645.8,0]] spawn MFUNC(system,addMissionInfos);
-            sleep 5;
-
-            hint str (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]);
-            copyToClipboard str (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]);
+            
           };
    case 3:{
              If(captive player)then
