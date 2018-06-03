@@ -42,7 +42,6 @@ switch(toUpper _idx)do
                        {
                         //Check & Clear MAINTARGETS
                         _holder = missionNamespace getVariable [STRVAR_DO(mission_main_targets),[]];
-                        diag_log format ["MISSION_HOLDER: %1",(missionNamespace getVariable [STRVAR_DO(mission_main_targets),[]])];
                         if(count _holder > 0)then
                         {
                           _search_idx = [3,_holder,_value] call MFUNC(system,getInfoArray);
@@ -138,7 +137,8 @@ switch(toUpper _idx)do
                             If(count _search_idx > 0)then
                             {
                               _f1_idx = (_search_idx select 0);_founded_arr = (_holder select _f1_idx);_found_pos = (_founded_arr select 0);
-                              REMOTE_TRIEXESM([2,_found_pos],system,doClientRespawn,([0,-2] select isDedicated));
+                              _target_arr = [2,_found_pos];
+                              REMOTE_TRIEXESM(_target_arr,system,doClientRespawn,0);
                               ARR_MINIDX(_holder,_f1_idx); missionNamespace setVariable [STRVAR_DO(resp_poses),_holder,false];
                             };
                           };
