@@ -10,15 +10,12 @@ if(!hasInterface) exitwith {};
 
   switch(_xtra)do
   {
-   case 0:{ hint "Press Mouse-Button to Teleport you on Mouseposition";
-            sleep 1;
+   case 0:{
 
-            openMap true;
-            onMapSingleClick "Player setPos _pos;openMap false;hintSilent """";onMapSingleClick """"; true;";
+            _this call MFUNC(usage,fastTravel);
 
 
-
-   	};
+   	      };
    case 1:{
             hint format ["DATEN ABFRAGE:\n POSASL: %1 \n DIRECTIONS: %2 \n POSITION: %3",(getPosATL _caller),(getDir _caller),(getPos _caller)];
   		      diag_log format ["DATEN ABFRAGE:\n POSASL: %1 \n DIRECTIONS: %2 \n POSITION: %3", (getPosATL _caller),(getDir _caller),(getPos _caller)];
@@ -40,6 +37,11 @@ if(!hasInterface) exitwith {};
             //[1] execVM "Missions\mission1.sqf";
             //copyToClipboard str (position Tr21);
             //missionNamespace setVariable ["msot_sweepermis2",true,true];
+            ["RESPAWNPOSES",[9148.21,21611.9,0],[9153.67,21645.8,0]] spawn MFUNC(system,addMissionInfos);
+            sleep 5;
+
+            hint str (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]);
+            copyToClipboard str (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]);
           };
    case 3:{
              If(captive player)then
@@ -63,6 +65,8 @@ if(!hasInterface) exitwith {};
             //sleep 2;
             //hint str (missionNamespace getVariable[STRVAR_DO(vehicle_store),[]]);
 
+
+            ["RESPAWNPOSES",[9148.21,21611.9,0]] spawn MFUNC(system,doMissionCheck);
 
 
 
