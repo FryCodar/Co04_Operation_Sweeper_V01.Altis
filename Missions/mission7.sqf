@@ -94,15 +94,25 @@ switch(_idx)do
   case 6:{
           _script = { [(_this select 1)] call MFUNC(system,delFromSystem);
                       {deleteVehicle _x}forEach nearestObjects [[16654.5,12667.9,0], ["all"],500];
-                      "Ende" remoteExec ["playMusic",([0,-2] select isDedicated)];      
+                      "Ende" remoteExec ["playMusic",([0,-2] select isDedicated)];
                     };
           _triggername = ["LEAVE",_main_pos,(_main_radius + 200)] call MFUNC(system,setTrigger);
           ["MAINTRIGGER",_main_pos,[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
-          missionNamespace setVariable ["msot_sweepermis7",true,true];
+          [7] execVM "Missions\mission7.sqf";
           "Submarine_01_F" createVehicle [14813.3,6046.16,0];
          };
   case 7:{
-            [10,"SUCCEEDED"] call MFUNC(tasks,setTask);sleep 20;
-            missionNamespace setVariable ["msot_sweepermis8",true,true];
+            //[14812.2,6052.21,0]
+            _script = {[8] execVM "Missions\mission7.sqf";};
+            _triggername = ["ACTIVATE",[14812.2,6052.21,0],250] call MFUNC(system,setTrigger);
+            ["MAINTRIGGER",[14812.2,6052.21,0],[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
+
+         };
+  case 8:{
+           [10,"SUCCEEDED"] call MFUNC(tasks,setTask);
+           sleep 10;
+           REMOTE_TRIEXESM([],intout,playoutro,0);
+           sleep 15;
+           missionNamespace setVariable ["msot_sweepermis7",true,true];
          };
 };

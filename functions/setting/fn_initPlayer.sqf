@@ -61,6 +61,9 @@ if(count (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]) > 
 {
   {_x call MFUNC(tasks,setTask); sleep 6;}forEach (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]);
 };
+//EXTRA SOUND später entfernen
+sleep 2;
+playSound "Sound01";
 };
 
 

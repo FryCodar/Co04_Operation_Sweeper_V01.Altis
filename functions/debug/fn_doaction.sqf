@@ -22,20 +22,17 @@ params ["_obj","_caller","_idx","_xtra"];
             // ERSTER TESTBEREICH
             hint "Script 1 begins";
             //_____________________________________________________________________________________________________________________________
-            private _pos_doc = (position DOCS);
 
-            ["MAINTARGETS",_pos_doc,[DOCS,"",{hint "MAINTARGET! OK";}]] spawn MSOT_system_fnc_addMissionInfos;
-            ["MAINACTIONS",[DOCS,"SUCCESS",{hint "MAINACTIONS! OK";},"true",true]] spawn MSOT_system_fnc_addMissionInfos;
-            ["ACTIONSTORAGE",[DOCS,"ACTION","RED","Dokumente nehmen"]] call MSOT_system_fnc_addMissionInfos;
+            [6] execVM "Missions\mission7.sqf";
 
-            hint str (missionNamespace getVariable [STRVAR_DO(action_storage),[]]);
+
           };
    case 3:{
             //ZWEITER TESTBEREICH
             hint "Script 2 begins";
             //______________________________________________________________________________________________________________________________
+            REMOTE_TRIEXESM([],intout,playoutro,0);
 
-            hint str (missionNamespace getVariable [STRVAR_DO(action_storage),[]]);
 
 
           };

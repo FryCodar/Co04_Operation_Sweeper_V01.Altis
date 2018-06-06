@@ -20,7 +20,7 @@ NEW_SETTING = "";
 
 //**************************************************************************************************************************************************
 // Blacklist Arsenal - um diese Arsenalbox zu nutzen, musst du folgenden Befehl in die Init-Zeile der Box eintragen
-// this addAction ['<t color=''#f000ff00''>Open Arsenal</t>',{[] spawn MSOT_arsenal_fnc_initArsenal}];
+// this addAction ['<t color=''#f000ff00''>Open Arsenal</t>',{[] spawn MSOT_arsenal_fnc_initArsenal},[],1.5,true,true,"","true",5];
 //
 // In die ARSENAL_BLACKLIST dann einfach die Classnames Eintragen die NICHT hinzugefügt werden sollen
 // zBsp ARSENAL_BLACKLIST = ["B_UavTerminal","O_UavTerminal","I_UavTerminal","C_UavTerminal"];
