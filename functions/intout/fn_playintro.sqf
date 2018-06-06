@@ -17,7 +17,7 @@ If(count _intro_datas == 3)then
   If((["play_intro", 1] call BFUNC(getParamValue)) == 1)then
   { cutText ["","BLACK"];
     sleep 2;
-    _intro_datas spawn MFUNC(intro,runcamera);
+    _intro_datas spawn MFUNC(intout,runcamera);
     cutText ["","BLACK IN",2];
     sleep _segmented_time;
   }else{camera_run = true;};
