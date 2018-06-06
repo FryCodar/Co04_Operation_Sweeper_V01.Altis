@@ -1,88 +1,59 @@
 if(!hasInterface) exitwith {};
 #include "msot_components.hpp"
 
-  private ["_obj","_caller","_idx","_xtra","_txt","_bunkers"];
-  _obj = _this select 0;
-  _caller = _this select 1;
-  _idx = _this select 2;
-  _xtra = _this select 3;
+params ["_obj","_caller","_idx","_xtra"];
 
 
   switch(_xtra)do
   {
    case 0:{
-
             _this call MFUNC(usage,fastTravel);
-
-
    	      };
    case 1:{
-            hint format ["DATEN ABFRAGE:\n POSASL: %1 \n DIRECTIONS: %2 \n POSITION: %3",(getPosATL _caller),(getDir _caller),(getPos _caller)];
-  		      diag_log format ["DATEN ABFRAGE:\n POSASL: %1 \n DIRECTIONS: %2 \n POSITION: %3", (getPosATL _caller),(getDir _caller),(getPos _caller)];
-            copyToClipboard str (position player);
-  		  //hint format ["[%1,%2]",(getPos _caller),(getDir _caller)];
-  		  //diag_log format ["[%1,%2]", (getPos _caller),(getDir _caller)];
-
-  		  //hint format ["%1",(getDir _caller)];
-
-
+            private _pos = (position _caller);
+            private _posatl = (getPosATL _caller);
+            private _posasl = (getPosASL _caller);
+            private _dir = (getDir _caller);
+            hint format ["SPIELER DATEN:\n\nPOSITION: %1\nPOSITION_ATL: %2\nPOSITION_ASL: %3\nDIR: %4",_pos,_posatl,_posasl,_dir];
+  		      diag_log format ["SPIELER DATEN:____POSITION: %1 ____POSITION_ATL: %2 ____POSITION_ASL: %3 ____DIR: %4",_pos,_posatl,_posasl,_dir];
+            copyToClipboard format ["[SPIELER DATEN: >>> POSITION_NORMAL: %1 <<<_>>> POSITION_ATL: %2 <<<_>>> POSITION_ASL: %3 <<<_>>> DIR: %4 <<<]",_pos,_posatl,_posasl,_dir];
           };
    case 2:{
-            hint "Script begins";
-            //[2] execVM "Missions\mission1.sqf";
-            //player playMoveNow "AinvPknlMstpSlayWpstDnon_medicOther";
-            //[[9148.21,21611.9,0],2000,["CAR","TRUCK"],"DELETE"] call MFUNC(creating,setConvoy);
-            //deleteVehicle ((missionNamespace getVariable ["BAGP",[]]) select 0);
-            //EventTrack01_F_EPA
-            //[1] execVM "Missions\mission1.sqf";
-            //copyToClipboard str (position Tr21);
-            //missionNamespace setVariable ["msot_sweepermis2",true,true];
-            
+            // ERSTER TESTBEREICH
+            hint "Script 1 begins";
+            //_____________________________________________________________________________________________________________________________
+            private _pos_doc = (position DOCS);
+
+            ["MAINTARGETS",_pos_doc,[DOCS,"",{hint "MAINTARGET! OK";}]] spawn MSOT_system_fnc_addMissionInfos;
+            ["MAINACTIONS",[DOCS,"SUCCESS",{hint "MAINACTIONS! OK";},"true",true]] spawn MSOT_system_fnc_addMissionInfos;
+            ["ACTIONSTORAGE",[DOCS,"ACTION","RED","Dokumente nehmen"]] call MSOT_system_fnc_addMissionInfos;
+
+            hint str (missionNamespace getVariable [STRVAR_DO(action_storage),[]]);
           };
    case 3:{
-             If(captive player)then
-  		       {
-  		           player setCaptive false;
-  			         hint format ["Friendly: %1",(captive player)];
-  		        }else{
-  		               player setCaptive true;
-  			             hint format ["Friendly: %1",(captive player)];
-  				         };
+            //ZWEITER TESTBEREICH
+            hint "Script 2 begins";
+            //______________________________________________________________________________________________________________________________
+
+            hint str (missionNamespace getVariable [STRVAR_DO(action_storage),[]]);
+
+
           };
-
    case 4:{
-            /*
-  			     hint "Open Map and Click on it to disable the Cursor Function";
-            onMapSingleClick "hint 'All MouseCurser functions on Map are disabled!';onMapSingleClick '';true;";
-            */
-            //[[4856.38,11104.6,0]] call MFUNC(system,delFromSystem);
-
-            //{_x setDamage 1; sleep 5;}forEach [Ziel01,Ziel02];
-            //sleep 2;
-            //hint str (missionNamespace getVariable[STRVAR_DO(vehicle_store),[]]);
-
-
-            ["RESPAWNPOSES",[9148.21,21611.9,0]] spawn MFUNC(system,doMissionCheck);
-
-
-
+            If(captive player)then
+            {
+              player setCaptive false;
+              hint format ["Friendly: %1",(captive player)];
+            }else{
+                  player setCaptive true;
+                  hint format ["Friendly: %1",(captive player)];
+                };
   		    };
 
   };
 
-
-
-
-
-//
-
 /*
 IDSEH = player addEventHandler ["InventoryOpened",{[[0],"Missions\mission_1.sqf"] remoteExec ["execVM", 0]; player removeEventHandler ["InventoryOpened",IDSEH];}];
-
-
-
-
-
 PFEIL Blau = "Sign_Arrow_Blue_F"
               Sign_Arrow_F
 moves = ["aidlpsitmstpsnonwnondnon_ground00"];
@@ -93,10 +64,5 @@ hellblau = #f000ffff
 grün = #f000ff00
 rot = #ff1221
 	#f00dffff
-
-*/
-
-//Ziele:
-/*
 [Terminal,0] call BIS_fnc_dataTerminalAnimate; Terminal aufklappen 0 = zu 3 = auf
 */

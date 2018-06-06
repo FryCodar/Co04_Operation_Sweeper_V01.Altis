@@ -1,4 +1,4 @@
-If(!hasInterface) exitWith {};
+﻿If(!hasInterface) exitWith {};
 #include "msot_components.hpp"
 private ["_player","_type_player","_config_text","_searched_word","_searched_in_type","_searched_in_config","_uniform","_googles"];
 diag_log "INITPLAYER: Starte INIT PLAYER";
@@ -61,9 +61,6 @@ if(count (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]) > 
 {
   {_x call MFUNC(tasks,setTask); sleep 6;}forEach (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]);
 };
-//EXTRA SOUND später entfernen
-sleep 2;
-playSound "Sound01";
 };
 
 

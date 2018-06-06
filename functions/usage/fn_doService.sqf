@@ -17,10 +17,10 @@ Examples:
 Author: Fry
 
 -------------------------------------------------------------------------------------------------- */
-private ["_set_fuel","_vec_type","_vec_parents","_allow","_driver","_magazines","_timer","_removed","_x","_count","_i","_config"];
-params ["_vehicle","_set_fuel"];
+private ["_vec_type","_vec_parents","_allow","_driver","_magazines","_timer","_removed","_turret_config","_x","_mags","_turrets","_i","_config"];
+params ["_vehicle",["_set_fuel",false]];
 _chk_arr = ["Air","LandVehicle"];
-If(isNil "_set_fuel")then{_set_fuel = false;};
+
 If(hasInterface)then{_set_fuel = true;};
 
 _vec_type = typeOf _vehicle;
@@ -66,29 +66,33 @@ _vehicle addMagazine (format["%1", _x]);
     }forEach _magazines;
 _vehicle setVehicleAmmo 1;
 };
-_count = count (configFile >> "CfgVehicles" >> _vec_type >> "Turrets");
 
-If(_count > 0)then
+_turrets = _vec_type call BFUNC(allTurrets);
+_turret_config = [_vehicle] call BFUNC(getTurrets);
+_magazines_arr = [];
 {
-for "_i" from 0 to (_count - 1) do
-{
-_config = (configFile >> "CfgVehicles" >> _vec_type >> "Turrets") select _i;
-_magazines = getArray(_config >> "magazines");
-_removed = [];
+  _magazines = getArray(_x >> "magazines");
+  If(count _magazines > 0)then{ARR_ADDVAR(_magazines_arr,_magazines);};
+}forEach _turret_config;
 
+
+If((count _turrets) isEqualTo (count _magazines_arr))then
 {
- if (!(_x in _removed))then
-{
-_vehicle removeMagazinesTurret [(format["%1",_x]),[_i]];
-_removed = _removed + [_x];
+  {
+    _vehicle removeMagazinesTurret [(_x select 0),(_x select 1)];
+    sleep 0.5;
+  }forEach (magazinesAllTurrets _vehicle);
+  {
+   _mags = (_magazines_arr select _forEachIndex);
+    F_LOOP(_i,0,((count _mags) - 1))
+    {
+      _vehicle addMagazineTurret [(_mags select _i),_x];
+      sleep 0.5;
+    };
+  sleep 0.5;
+ }forEach _turrets;
 };
-}forEach _magazines;
-{
- _vehicle addMagazineTurret [(format["%1",_x]),[_i]];
-}forEach _magazines;
-sleep 0.04;
-};
-};
+_vehicle setVehicleAmmo 1;
 
 If(hasInterface)then
 {
@@ -109,7 +113,7 @@ If(_set_fuel)then
 _vehicle setfuel 1;
 };
 };
-}else{If(hasInterface && player == _vehicle)then{cutText ["<t color='#ff0000' size='3'>THIS SERVICEPOINT IS FOR<br/>!!! VEHICLES ONLY !!!</t>","PLAIN",0,true,true];
-      sleep 4;cutText ["","PLAIN",0,true,true];
+}else{If(hasInterface && player == _vehicle)then{cutText ["<t color='#ff0000' size='3'>THIS SERVICEPOINT IS FOR<br/>!!! VEHICLES ONLY !!!</t>","PLAIN",-1,true,true];
+      sleep 4;cutText ["","PLAIN",-1,true,true];
       };};
 true

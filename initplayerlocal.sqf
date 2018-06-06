@@ -55,7 +55,7 @@ missionNamespace setVariable [STRVAR_DO(play_intro),_play_intro,false];
 
 ["id_start_intro","onPreloadFinished",{["id_start_intro","onPreloadFinished"] call BIS_fnc_removeStackedEventHandler;
                                        diag_log "INITPLAYERLOCAL: Starte INTRO";
-                                      [] spawn MFUNC(intro,playintro);}] call BIS_fnc_addStackedEventHandler;
+                                      [] spawn MFUNC(intout,playintro);}] call BIS_fnc_addStackedEventHandler;
 //____________________________________________________________
 
 sleep 3;
