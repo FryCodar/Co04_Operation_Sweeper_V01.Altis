@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=859;
+		nextID=866;
 	};
 	class Camera
 	{
@@ -791,7 +791,7 @@ class Mission
 		startWeather=0;
 		startWind=0;
 		startWaves=0.1;
-		forecastWeather=0.10182983;
+		forecastWeather=0;
 		forecastWind=0;
 		forecastWaves=0.1;
 		rainForced=1;
@@ -13642,12 +13642,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={21918.676,14.147102,15642.973};
-				angles[]={6.2818484,0,0.0026520467};
+				position[]={21918.676,14.147103,15642.973};
+				angles[]={6.2818413,0,0.0026529003};
 			};
 			name="Lage03";
 			id=1155;
 			type="ModuleCreateDiaryRecord_F";
+			atlOffset=9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -22561,11 +22562,12 @@ class Mission
 			position[]={13465.734,12.367311,12012.047};
 			class Attributes
 			{
-				condition="call{this && hasInterface && {missionNamespace getVariable [""msot_sweepermis5"",false]}}";
-				onActivation="call{playSound ""Makrynisi""; deleteVehicle thisTrigger;}";
+				condition="call{this && {missionNamespace getVariable [""msot_sweepermis5"",false]}}";
+				onActivation="call{""Makrynisi"" remoteExec [""playSound"",([0,-2] select isDedicated)]; deleteVehicle thisTrigger;}";
 				sizeA=600;
 				sizeB=600;
 				activationBy="ANYPLAYER";
+				isServerOnly=1;
 			};
 			id=1923;
 			type="EmptyDetectorAreaR250";
