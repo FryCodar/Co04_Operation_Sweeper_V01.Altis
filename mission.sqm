@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=866;
+		nextID=873;
 	};
 	class Camera
 	{
-		pos[]={13436.955,34.024628,11950.067};
-		dir[]={-0.5352354,-0.15679044,-0.83004051};
-		up[]={-0.084970966,0.98763126,-0.13177256};
-		aside[]={-0.84043711,-1.1739758e-007,0.54193676};
+		pos[]={19386.1,56.756523,29740};
+		dir[]={-0.06460841,-0.29289719,0.95397407};
+		up[]={-0.019791026,0.95614421,0.29222485};
+		aside[]={0.99772626,-3.6342317e-007,0.067572728};
 	};
 };
 binarizationWanted=0;
@@ -2282,7 +2282,7 @@ class Mission
 		class Item38
 		{
 			dataType="Trigger";
-			position[]={19409.027,0.037994385,29826.551};
+			position[]={19409.027,-180.97,29826.551};
 			class Attributes
 			{
 				condition="call{this}";
@@ -2295,7 +2295,7 @@ class Mission
 			};
 			id=94;
 			type="EmptyDetectorArea10x10";
-			atlOffset=186.008;
+			atlOffset=5;
 		};
 		class Item39
 		{
@@ -2352,6 +2352,7 @@ class Mission
 			{
 				ammo=0;
 				fuel=0;
+				init="call{this addEventHandler[""GetIn"",{(_this select 2) action [""getOut"",(_this select 0)];}];}";
 				name="H1";
 			};
 			id=98;
@@ -23648,6 +23649,7 @@ class Mission
 			};
 			id=2041;
 			type="BWA3_Box_Gear_Tropen";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -51,7 +51,7 @@ switch(_idx)do
 
             _task_description_long = "Die im Lageupdate Nr. 2 befindliche Luftaufnahme entstand südlich der Stadt KALOCHORI mit Fahrtrichtung WESTEN! Wir gehen davon aus, dass der Konvoi diese Stelle passieren wird und durch Sie aufgehalten werden kann!";
 
-            _task_description_forHUD = "Zerstören Sie den Konvoi (siehe neues Lageupdate Nr.2)";
+            _task_description_forHUD = "Zerstören Sie den Konvoi (siehe Lageupdate Nr.2)";
 
             _task_Type  = "destroy";
           };
