@@ -9168,7 +9168,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={18113.102,-8.392334e-005,18965.764};
-			angle=2.0812001;
+			angle=2.0812004;
 			class Attributes
 			{
 				condition="call{this && {local player}}";
