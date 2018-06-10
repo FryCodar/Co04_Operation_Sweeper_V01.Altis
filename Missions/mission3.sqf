@@ -31,25 +31,25 @@ switch(_idx)do
               _dummy enableSimulation false;
               _dummy setPos [_doorpos select 0, _doorpos select 1, (_doorpos select 2) - 1];
               _dummy hideObjectGlobal true;
+              _dummy allowDamage false;
 
               [_dummy] spawn {
                               params ["_dummy1"];
                               private _check_dummy = true;
                               private _pos = position _dummy1;
                               private _found_claymore = false;
+                              private _chk_clay = true;
                               while{_check_dummy}do
                               {
                                 _is_in = nearestObjects [_pos,["ACE_Explosives_Place_Claymore"], 2, false];
                                 switch(true)do
                                 {
-                                  case ((count _is_in) > 0):{_found_claymore = true;};
-                                  case ((damage _dummy1) > 0):{If(_found_claymore && {(damage _dummy1) > 0})then
-                                                                {
-                                                                  MSOT_AIRPORT_HOUSE setVariable ["bis_disabled_Door_1",0,true];
-                                                                  [MSOT_AIRPORT_HOUSE, 1, 1] call BIS_fnc_Door;
-                                                                  _check_dummy = false;
-                                                                };
-                                                              };
+                                  case ((count _is_in) > 0 && _chk_clay):{_found_claymore = true; _chk_clay = false;_dummy1 allowDamage true;};
+                                  case (_found_claymore && {(damage _dummy1) > 0}):{
+                                                                                     MSOT_AIRPORT_HOUSE setVariable ["bis_disabled_Door_1",0,true];
+                                                                                     [MSOT_AIRPORT_HOUSE, 1, 1] call BIS_fnc_Door;
+                                                                                     _check_dummy = false;
+                                                                                  };
                                 };
                                 sleep 0.4;
                               };
